@@ -3,13 +3,13 @@
 Emergence of counter-propagating single-cavity dual-comb lasers (SCDCLs) have revolutionized the field of dual-comb metrology due to its simpler architecture and free-running configuration. Conventional time-domain dual-comb technique suffers from the trade-off problem between temporal resolution and measurement frame rate requiring large acquisition time for high resolution measurements with significant dead time. To overcome this trade-off problem in SCDCL, here we introduce, for the first time, an all optical dynamic modulation technique for SCDCLs. We demonstrate the novel idea by modulating the repetition rate difference (Δfr) about zero using the newly developed CANDi fiber laser. Owing to the non-reciprocal longitudinal gain distribution in the gain fiber, we achieve dynamic tuning of Δfr by tuning the pump laser. Using dispersive Fourier transform and spectral interferometry, we further verify that the relative timing jitter is unaffected due to this dynamic tuning technique. We apply this technique to characterize the relaxation time constant of an off-shelf SESAM and achieve a framerate enhancement factor of 143, which can be further improved by modulating at a faster rate. This dynamic SCDCL opens many new exciting possibilities in nonlinear dual-comb metrology. In this repository supporting code is provided to better understand the physical process of the NPR mode-locking and dynamic modulation induced by the spatially varying YDF gain.
 
 
-For further information you can reach Jonathan Musgrave @jomu3154@colorado.edu!
+For further information about this simulation you can reach Jonathan Musgrave @jomu3154@colorado.edu!
 ## Authors
 
-- Jonathan Musgrave - Developed simulation
-- Neeraj Prakash - Experimental and lead author
-- Bowen Li - Experimental and corresponding author
-- Shu-Wei Huang - Corresponding author
+- Jonathan Musgrave
+- Neeraj Prakash
+- Bowen Li
+- Shu-Wei Huang
 
 ## Documentation
 

@@ -1,0 +1,35 @@
+function sys = plot_PowerOutput(sys,signal,pumps,fiber,options)
+if ~exist('options','var'), options = struct;end
+if ~isfield(options,'units'), options.units = 'linear';end
+run('units.m');
+if strcmpi(options.units,'linear')
+   ystr = 'Power (W)';
+   yL = [0,max([max(signal.Powerz),max(pumps.Powerz)])];
+else
+    signal.Powerz = W2dBm(signal.Powerz);
+    pumps.Powerz  = W2dBm(pumps.Powerz);
+    yMax = max([max(signal.Powerz),max(pumps.Powerz)]);
+    
+    if ~isfield(options,'ymin'), options.units = 'linear';end
+    yL = [yMax - 30,yMax];
+    ystr = 'Power (dBm)';
+end
+if max(yL) == 0 || max(yL) == -Inf, yL= [0,1];end
+
+figure(sys.fignum);clf;
+plot(sys.z,signal.Powerz,'-b','linewidth',3)
+hold on; plot(sys.z,pumps.Powerz,'-r','linewidth',3)
+legend('Signal','P_{fw}','P_{bw}')
+ylim(yL)
+xlim([0,fiber.Lz]);grid on;
+ylabel(ystr);
+yyaxis('right');
+plot(sys.z(2:end),fiber.N2z.*100,'--k')
+ylabel('N_2 (%)');
+set(gca,'Ycolor',[0,0,0])
+ylim([0,100])
+
+sys.fignum = sys.fignum+1;
+
+
+end
